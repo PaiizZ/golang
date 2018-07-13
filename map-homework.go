@@ -7,9 +7,12 @@ import (
 
 func main() {
 	wc := NewWordCount()
-	wc = wc.AddWord("I a a a")
+	wc = wc.AddWord("Oh wait til’ I do what I do Hit you with that ddu-du ddu-du du Hit you with that ddu-du ddu-du du")
 	fmt.Println(wc.MaxWordCount())
-	wc.PrintAll()
+	fmt.Println(wc.MinWordCount())
+	fmt.Println(wc.LongestWord())
+	fmt.Println(wc.ShortestWord())
+	// wc.PrintAll()
 }
 
 type WordCount struct {
@@ -46,15 +49,39 @@ func (wc WordsCount) MaxWordCount() (string, int) {
 }
 
 func (wc WordsCount) MinWordCount() (string, int) {
-	return "", 0
+	var key string
+	var minCount int
+	for value := range wc {
+		if wc[value].Count < minCount || minCount == 0 {
+			key = value
+			minCount = wc[value].Count
+		}
+	}
+	return key, minCount
 }
 
 func (wc WordsCount) LongestWord() (string, int) {
-	return "", 0
+	var key string
+	var longest int
+	for value := range wc {
+		if wc[value].Length > longest || longest == 0 {
+			key = value
+			longest = wc[value].Length
+		}
+	}
+	return key, longest
 }
 
 func (wc WordsCount) ShortestWord() (string, int) {
-	return "", 0
+	var key string
+	var shortest int
+	for value := range wc {
+		if wc[value].Length < shortest || shortest == 0 {
+			key = value
+			shortest = wc[value].Length
+		}
+	}
+	return key, shortest
 }
 
 func (wc WordsCount) PrintAll() {

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -26,7 +25,7 @@ func WordCountTon(s string) map[string]int {
 	return strs
 }
 
-func main() {
-	fmt.Println(WordCountTon("I LOVE U"))
-	fmt.Println(WordCount("I LOVE U"))
-}
+// func main() {
+// 	fmt.Println(WordCountTon("I LOVE U"))
+// 	fmt.Println(WordCount("I LOVE U"))
+// }

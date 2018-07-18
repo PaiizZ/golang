@@ -4,10 +4,10 @@ import (
 	"fmt"
 )
 
-// func main() {
-// 	fmt.Println("Hello")
-// 	reverseArray()
-// }
+func main() {
+	fmt.Println("Hello")
+	reverseArray()
+}
 
 func reverseArray() {
 	num := []int{5, 2, 6, 3, 1, 4}

@@ -2,21 +2,22 @@ package main
 
 import (
 	"errors"
+	"fmt"
 )
 
 type stack []int
 
-// func main() {
-// 	var s stack
-// 	s = s.push(5)
-// 	s = s.push(4)
-// 	s = s.push(3)
-// 	s = s.push(2)
-// 	s = s.push(1)
-// 	s, _ = s.pop()
-// 	fmt.Println(s)
-// 	fmt.Println(len(s))
-// }
+func main() {
+	var s stack
+	s = s.push(5)
+	s = s.push(4)
+	s = s.push(3)
+	s = s.push(2)
+	s = s.push(1)
+	s, _ = s.pop()
+	fmt.Println(s)
+	fmt.Println(len(s))
+}
 
 func (s stack) push(a int) stack {
 	return append(s, a)
